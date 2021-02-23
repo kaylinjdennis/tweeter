@@ -1,0 +1,25 @@
+#title {
+	font-family: "Bungee", "sans-serif";
+	font-size: 60px;
+	padding: 0.75em;
+}
+
+#prompt {
+	font-size: 30px;
+	padding: 1.5em;
+}
+
+.nav {
+	display: flex;
+	flex-direction: row;
+	/* padding: 1.5em; */
+	/* vertical-align: top; */
+}
+
+nav {
+	height: 120px;
+	background-color: #4056A1;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: space-between;
+}
