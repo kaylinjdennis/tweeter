@@ -23,8 +23,15 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- 	body {
-	 font-family: "Source Sans Pro", "sans-serif";
- }
+body {
+	font-family: "Source Sans Pro", "sans-serif";
+}
+
+main {
+	width: 90%;
+	display: flex;
+	margin: auto;
+	background-color: #f4f1ec;
+}
 
  
