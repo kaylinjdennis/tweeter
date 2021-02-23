@@ -12,8 +12,6 @@
 .nav {
 	display: flex;
 	flex-direction: row;
-	/* padding: 1.5em; */
-	/* vertical-align: top; */
 }
 
 nav {
