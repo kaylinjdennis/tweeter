@@ -32,6 +32,60 @@ main {
 	display: flex;
 	margin: auto;
 	background-color: #f4f1ec;
+	flex-direction: column;
 }
 
- 
+article.tweet {
+	/* width: 103%; */
+	color: white;
+	display: flex;
+	flex-direction: column;
+	border-style: solid;
+	border-width: 5px;
+	border-color: black;
+	padding: 10px;
+	margin: 0px -10px 30px -10px;
+}
+
+article.tweet header {
+	height: auto;
+	/* color: white; */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 20px 30px 30px 20px;
+	font-size: 40px;
+	font-weight: lighter;
+}
+
+article.tweet header img{
+	height: 80px;
+	width: 95px;
+	padding-right: 15px;
+}
+
+article.tweet header div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	color: black;
+}
+
+article.tweet div.tweet-body{
+	border-bottom: 5px solid black;
+	padding: 30px 30px 40px 30px;
+	font-size: 40px;
+	color: black;
+}
+
+article.tweet footer {
+	display: flex;
+	height: 80px;
+	padding-left: 30px;
+	color: black;
+}
+
+article:hover {
+	color: rgb(230, 154, 42);
+	box-shadow: 10px 10px 0px 0px rgb(230, 154, 42);
+}
