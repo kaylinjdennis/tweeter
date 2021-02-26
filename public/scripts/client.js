@@ -28,6 +28,8 @@ $(document).ready(function() {
     } else {
       $.ajax({ method: "POST", url: "/tweets", data: $(this).serialize()})
         .done(function() {
+          $('#tweet-text').val('');
+          document.getElementsByClassName('counter').counter.innerHTML = 140;
           $loadTweets();
         });
     }
