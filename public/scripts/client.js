@@ -14,10 +14,17 @@ $(document).ready(function() {
 
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
-    $.ajax({ method: "POST", url: "/tweets", data: $(this).serialize()})
-      .done(function() {
-        $loadTweets();
-      });
+    const counter = document.getElementsByClassName('counter').counter.innerHTML;
+    if ($(this).serialize().length === 5) {
+      alert('Error: no tweet content');
+    } else if (counter < 0) {
+      alert('Error: tweet content exceeds 140 characters');
+    } else {
+      $.ajax({ method: "POST", url: "/tweets", data: $(this).serialize()})
+        .done(function() {
+          $loadTweets();
+        });
+    }
   });
   $loadTweets();
 });
