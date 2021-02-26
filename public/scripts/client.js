@@ -6,13 +6,8 @@
 
 $(document).ready(function() {
   $('#form-error').hide();
-  const $loadTweets = function() {
-    $.ajax('/tweets', {method: 'GET'})
-      .then(function(tweets) {
-        renderTweets(tweets);
-      });
-  };
 
+  // Handle submission of new tweet
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
     $('#form-error').hide();
@@ -58,6 +53,13 @@ const createTweetElement = (tweet) => {
   return $tweet;
 };
 
+const $loadTweets = function() {
+  $.ajax('/tweets', {method: 'GET'})
+    .then(function(tweets) {
+      renderTweets(tweets);
+    });
+};
+	
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));

@@ -36,19 +36,13 @@ main {
 }
 
 article.tweet {
-	/* width: 103%; */
 	color: #f4f1ec;
-	display: flex;
-	flex-direction: column;
-	border-style: solid;
-	border-width: 5px;
-	border-color: black;
+	border: 5px solid black;
 	padding: 10px;
 	margin: 0px -10px 30px -10px;
 }
 
 article.tweet header {
-	height: auto;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -65,7 +59,6 @@ article.tweet header img{
 
 article.tweet header div {
 	display: flex;
-	flex-direction: row;
 	align-items: center;
 	color: black;
 }
