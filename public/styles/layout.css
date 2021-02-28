@@ -68,6 +68,7 @@ article.tweet div.tweet-body{
 	padding: 30px 30px 40px 30px;
 	font-size: 40px;
 	color: black;
+	word-wrap: break-word;
 }
 
 article.tweet footer {

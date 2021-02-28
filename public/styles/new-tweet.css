@@ -40,11 +40,20 @@ form div {
 	background-color: #f4f1ec;
 }
 
-#form-error {
+#min-error {
 	background-color: rgb(189, 1, 1);
 	color: #FFFFFF;
 	font-size: xx-large;
-	height: 4em;
+	height: 2em;
+	width: fit-content;
+	padding: 0.5em;
+}
+
+#max-error {
+	background-color: rgb(189, 1, 1);
+	color: #FFFFFF;
+	font-size: xx-large;
+	height: 2em;
 	width: fit-content;
 	padding: 0.5em;
 }

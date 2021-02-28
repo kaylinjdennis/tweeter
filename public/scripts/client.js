@@ -5,27 +5,26 @@
 */
 
 $(document).ready(function() {
-  $('#form-error').hide();
-
+  $('#min-error').hide();
+  $('#max-error').hide();
   // Handle submission of new tweet
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
-    $('#form-error').hide();
-    $('#min-error').hide();
-    $('#max-error').hide();
-    const counter = document.getElementsByClassName('counter').counter.innerHTML;
-    if ($(this).serialize().length === 5) {
-      $('#form-error').show();
+    console.log($('#tweet-text').val().length);
+    if ($('#tweet-text').val().length === 0) {
       $('#min-error').show();
-    } else if (counter < 0) {
-      $('#form-error').show();
+      $('#max-error').hide();
+    } else if ($('#tweet-text').val().length > 140) {
       $('#max-error').show();
+      $('#min-error').hide();
     } else {
       $.ajax({ method: "POST", url: "/tweets", data: $(this).serialize()})
-        .done(function() {
+        .then(function() {
+          $('#min-error').hide();
+          $('#max-error').hide();
           $('#tweet-text').val('');
           document.getElementsByClassName('counter').counter.innerHTML = 140;
-          $loadTweets();
+          location.reload();
         });
     }
   });
@@ -70,14 +69,8 @@ const renderTweets = (tweets) => {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
-  const numOfInitialTweets = $('#tweets-container').children.length;
-  if (tweets.length > numOfInitialTweets) {
-    const $tweet = createTweetElement(tweets[tweets.length - 1]);
+  for (let tweet of tweets) {
+    const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
-  } else {
-    for (let tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet);
-    }
   }
 };
