@@ -88,6 +88,8 @@ article:hover {
 	flex-direction: column-reverse;
 }
 
+
+/* Changes how tweets are displayed on a desktop */
 @media (min-width: 1024px) {
 	body {
 		display: flex;

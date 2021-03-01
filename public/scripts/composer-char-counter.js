@@ -1,3 +1,4 @@
+// Implements the counter shown when writing a new tweet
 $(document).ready(function() {
   const element = document.getElementById('tweet-text');
   const counter = document.getElementsByClassName('counter').counter;

@@ -7,10 +7,12 @@
 $(document).ready(function() {
   $('#min-error').hide();
   $('#max-error').hide();
+	
   // Handle submission of new tweet
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
     console.log($('#tweet-text').val().length);
+    // Handle form errors (no input or too large of input)
     if ($('#tweet-text').val().length === 0) {
       $('#min-error').show();
       $('#max-error').hide();
@@ -18,6 +20,7 @@ $(document).ready(function() {
       $('#max-error').show();
       $('#min-error').hide();
     } else {
+      // Handle a successful submission
       $.ajax({ method: "POST", url: "/tweets", data: $(this).serialize()})
         .then(function() {
           $('#min-error').hide();
@@ -32,6 +35,7 @@ $(document).ready(function() {
 });
 
 const createTweetElement = (tweet) => {
+  // Creates an html article element for the given tweet
   const $tweet = $(`
 		<article class="tweet">
 			<header>
@@ -66,9 +70,7 @@ const escape =  function(str) {
 };
 
 const renderTweets = (tweets) => {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
+  // Creates a tweet element for each tweet and adds it to the tweets container
   for (let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
